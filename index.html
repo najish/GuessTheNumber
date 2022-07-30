@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+    <style>
+        body {
+            padding:0;
+            margin:0;
+        }
+
+        .container {
+            height:300px;
+            width:650px;
+            background-color: lightblue;
+            display:flex;
+            justify-content: center;
+            margin:10px 20px;
+            padding:10px 30px;
+            text-align: center;
+        }
+
+        .alert {
+            background-color: red;
+            width:50%;
+            margin-left:20%;
+        }
+
+        .again {
+            display: none;
+            margin-left:30%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Number guessing game</h1>
+            <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns of fewer. We'll tell you if your guess was too hight or too low.</p>
+            <label for="number">Enter a guess:</label>
+            <input type="text" name="number" id="number">
+            <button class="submit">Submit guess</button>
+            <div>
+                <span class="prev" style="display:none">Previous guess: </span>
+            </div>
+            <div class="alert">
+                
+            </div>
+            <div>
+                <span class="result"></span>
+            </div>
+
+            <div>
+                <button class="again">Play again</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var number = Math.floor((Math.random() * 10000) % 101);
+        var input = document.querySelector('#number');
+        var msg = document.querySelector('.result');
+        var prev = document.querySelector('.prev');
+        var wrongright = document.querySelector('.alert');
+        var result;
+        var again = document.querySelector('.again');
+        console.log(input);
+
+
+        var submit = document.querySelector('.submit');
+        submit.addEventListener('click', () => 
+        {
+            result = input.value;
+            input.value = "";
+
+            if(result > number)
+            {
+                msg.textContent = 'guess is too high';
+                wrongright.textContent = 'Wrong';
+                prev.textContent = 'Previous guess: ';
+                prev.textContent = prev.textContent + result;
+                prev.setAttribute('style','display:inline');
+            }
+            else if(result < number)
+            {
+                msg.textContent = 'guess is too low';
+                wrongright.textContent = 'Wrong';
+                prev.textContent = 'Previous guess: ';
+                prev.textContent = prev.textContent + result;
+                prev.setAttribute('style','display:inline');
+            }
+            else
+            {
+                msg.textContent = 'your guessed it right';
+                wrongright.setAttribute('style','background-color:green');
+                wrongright.textContent = 'Right';
+                again.setAttribute('style','display:block');
+
+                again.addEventListener('click',() => 
+                {
+                    input.value = '';
+                    msg.textContent = '';
+                    wrongright.textContent = '';
+                    wrongright.setAttribute('style','block:none');
+                    again.setAttribute('style','display:none');
+                });
+            }
+
+        });
+</script>
+</body>
+</html>

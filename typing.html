@@ -17,7 +17,7 @@
             justify-content: center;
             /* padding:0px 10px; */
         }
-        input {
+        input#key {
             height:100px;
             width:100%;
             padding:0px 20px;
@@ -44,7 +44,7 @@
         
         span.btn {
             
-            background-color:lightgrey;
+            background-color:lightblue;
             padding:40px;
             height:100px;
             width:200px;
@@ -58,6 +58,12 @@
             <h1>Type something to check</h1>
             <div>
                 <input type="text" id="key" />
+                <label>Caps Lock: </label>
+                <label for="capon">On</label>
+                <input type="radio" id="capon" name=  "caps" value="on">
+                <label for="capoff">Off</label>
+                
+                <input type="radio"  name="caps" value="off">
                 <span class="result"></span>
             </div>
         </div>
@@ -105,12 +111,21 @@
         var result = document.querySelector('.result');
         var key = document.querySelector('input');
         var keys = document.getElementsByClassName('btn');
-        key.addEventListener('keydown',() => {
+        var keyboard = document.querySelector('input#key');
+
+        keyboard.addEventListener('click', () => {
+            console.log('enters');
+            var res = new KeyboardEvent('keydown');
+            res.key
+            
+        })
+        key.addEventListener('keydown',(e) => {
+            
             for(var btn of keys) {
                 if(event.key === btn.textContent)  {
                     btn.setAttribute('style','background-color:red');
                 }else {
-                    btn.setAttribute('style','background-color:lightgrey');
+                    btn.setAttribute('style','background-color:lightblue')
                 }
             }
         });

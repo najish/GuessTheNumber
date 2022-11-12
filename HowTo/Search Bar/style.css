@@ -1,0 +1,52 @@
+.container {
+    background-color:rgb(233, 233, 233);
+    display:flex;
+    justify-content: space-between;
+    height:100%;
+    width:100%;
+}
+
+.first {
+    height:50px;
+    width:750px;
+    display:flex;
+    align-items: center;
+}
+
+.first>div {
+    padding:0px 10px;
+    height:50px;
+    display:flex;
+    align-items: center;
+}
+
+.first>div:hover{
+    background-color:lightgreen;
+}
+
+.second {
+    height: 50px;
+    display:flex;
+    align-items: center;
+}
+
+.second>div {
+    height: 50px;
+    display:flex;
+    align-items: center;
+}
+.second input {
+    height:30px;
+}
+
+.second i {
+    height:30px;
+    width:30px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(233, 233, 233);
+}
+#color {
+    background-color:rgb(33, 150, 243);
+}

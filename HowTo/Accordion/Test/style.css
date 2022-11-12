@@ -1,0 +1,47 @@
+* {
+    margin:0px;
+    padding:0px;
+    background-color: antiquewhite;
+}
+
+.box {
+    height:300px;
+    width:100%;
+    border:2px solid red;
+    display:flex;
+}
+
+
+.box > div {
+    height:100px;
+    width:200px;
+    background-color: green;
+    margin:10px 20px;
+    transition-property: height;
+    transition-duration:2s;
+}
+
+/* .box>div:active {
+    background-color:red;
+    height:400px;
+} */
+
+
+.container {
+    height:200px;
+    width:200px;
+    transition-property:height,width;
+    transition-duration:2s;
+    background-color:purple;
+    position:absolute;
+    top:250px;
+    left:500px;
+}
+
+
+
+
+.active , .container:hover {
+    height:400px;
+    width:400px;
+}

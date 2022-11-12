@@ -1,0 +1,28 @@
+* {
+    margin: 2px;
+    padding:0px;
+}
+
+
+.container {
+    border:1px solid red;
+}
+
+.section {
+    margin:0;
+    padding:15px;
+    height:0px;
+    background-color:rgb(184, 194, 195);
+    transition-property: height;
+    transition-duration: 2s;
+}
+
+
+.active {
+    height:200px;
+}
+.section > * {
+    margin:10px 20px;
+}
+
+

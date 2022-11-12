@@ -1,0 +1,71 @@
+* {
+    margin:0;
+    padding:0;    
+    box-sizing:border-box;
+}
+
+
+.container {
+    height:350px;
+    width:750px;
+    background-color: antiquewhite;
+}
+
+
+
+.content {
+    height:270px;
+}
+
+.content>div {
+    height:270px;
+    width:750px;
+    display:none;
+    position:absolute;
+}
+.content>div>div {
+    display:flex;
+    justify-content: center;
+    height:100%;
+    align-items: center;
+}
+.content>div>div>div>h3,p {
+    margin:10px;
+}
+.cities {
+    display:flex;
+    height:80px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #eee;
+    box-sizing: border-box;
+}
+
+.cities > div {
+    flex:1;
+    height:80px;
+    padding:30px 30px;
+}
+
+.cities>div:hover {
+    background-color:#e2e2e2;
+}
+
+
+#london , .london {
+    background-color:rgb(255, 0, 0);
+}
+
+#paris, .paris {
+    background-color: rgb(4, 170, 109);
+}
+
+#tokyo, .tokyo {
+    background-color: rgb(33, 150, 243);
+}
+
+#oslo, .oslo {
+    background-color: rgb(255, 87, 34);
+}
+
